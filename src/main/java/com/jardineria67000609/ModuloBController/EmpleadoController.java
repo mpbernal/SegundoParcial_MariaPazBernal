@@ -1,8 +1,8 @@
 package com.jardineria67000609.ModuloBController;
 
 
-import com.example.Jardineria.ModuloA.Entity.Producto;
 import com.example.Jardineria.ModuloA.Repository.EmpleadoRepository;
+import com.jardineria67000609.ModuloA.Entity.Empleado;
 import com.jardineria67000609.ModuloA.DTO.EmpleadoDTO;
 import com.jardineria67000609.ModuloA.Service.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,22 +20,22 @@ public class EmpleadoController {
     private EmpleadoRepository empleadoRepository;
 
     @GetMapping
-    public List<Producto> findAll(){
+    public List<Empleado> findAll(){
         return empleadoService.getEmpleados();
     }
 
 
     @GetMapping("/{id}")
-    public Optional<Producto> getById(@PathVariable("id")String id){
+    public Optional<Empleado> getById(@PathVariable("id")String id){
         return empleadoService.getEmpleados(id);
     }
 
     @PostMapping("/crear")
-    public void crearProducto(@RequestBody EmpleadoDTO productoDTO) {
+    public void crearEmpleado(@RequestBody EmpleadoDTO productoDTO) {
         empleadoService.save(EmpleadoDTO);
     }
     @PatchMapping("/Actualizar")
-    public void guardarProducto(@RequestBody EmpleadoDTO productoDTO) {
+    public void guardarEmpleado(@RequestBody EmpleadoDTO productoDTO) {
         empleadoService.update(EmpleadoDTO);
     }
 
@@ -45,7 +45,7 @@ public class EmpleadoController {
     }
 
     @GetMapping("/porNombre")
-    public List<Producto> buscarEmpleadosPorNombre(@RequestParam String nombre) {
+    public List<Empleado> buscarEmpleadosPorNombre(@RequestParam String nombre) {
         return empleadoRepository.findByNombre(nombre);
     }
 }

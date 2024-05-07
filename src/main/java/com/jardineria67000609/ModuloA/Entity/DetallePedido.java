@@ -1,4 +1,5 @@
-package com.example.Jardineria.ModuloA.Entity;
+package com.jardineria67000609.ModuloA.Entity;
+
 import jakarta.persistence.*;
 import lombok.Data;
 @Data

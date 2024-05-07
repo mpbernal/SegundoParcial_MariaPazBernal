@@ -1,11 +1,12 @@
 package com.jardineria67000609.ModuloBController;
 
-import com.example.Jardineria.ModuloA.Entity.GamaProducto;
 import com.jardineria67000609.ModuloA.DTO.OficinaDTO;
+import com.jardineria67000609.ModuloA.Entity.Oficina;
 import com.jardineria67000609.ModuloA.Service.OficinaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,8 +22,8 @@ public class OficinaController {
 
 
     @GetMapping("/{gama}")
-    public Optional<GamaProducto> getById(@PathVariable("gama")String gama){
-        return oficinaService.getOficina(gama);
+    public Optional<Oficina> getById(@PathVariable("gama")String oficina){
+        return oficinaService.getOficina(oficina);
     }
 
     @PostMapping("/Crear")
@@ -34,9 +35,9 @@ public class OficinaController {
         oficinaService.update(oficinaDTO);
     }
 
-    @DeleteMapping("/{gama}")
-    public void delete(@PathVariable("gama") String gama){
-        oficinaService.delete(oficina);
+    @DeleteMapping("/{Oficina}")
+    public void delete(@PathVariable("oficina") String gama){
+        oficinaService.delete(Oficina);
     }
 
 

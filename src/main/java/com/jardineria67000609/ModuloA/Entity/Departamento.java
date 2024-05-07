@@ -1,4 +1,4 @@
-package com.example.Jardineria.ModuloA.Entity;
+package com.jardineria67000609.ModuloA.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
